@@ -4,6 +4,7 @@ import RegisterPage from './Pages/RegisterPage';
 import LoginPage from './Pages/LoginPage';
 import ProductInfo from './Pages/ProductInfo';
 import CartPage from './Pages/CartPage';
+import './stylesheets/layout.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const App = () => {

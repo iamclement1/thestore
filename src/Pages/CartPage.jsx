@@ -1,8 +1,9 @@
 import React from 'react'
+import Layout from '../Components/Layout'
 
 function CartPage() {
   return (
-    <div>CartPage</div>
+    <Layout>CartPage</Layout>
   )
 }
 
