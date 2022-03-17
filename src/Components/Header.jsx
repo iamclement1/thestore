@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
 
 function Header() {
   return (
@@ -16,7 +17,7 @@ function Header() {
           aria-controls='navbarNav'
           aria-expanded='false'
           aria-label='Toggle navigation'>
-            <span className='navbar-toggler-icon'></span>
+            <span className='navbar-toggler-icon'> </span>
           </button>
           <div className='collapse navbar-collapse'
           id='navbarNav'>

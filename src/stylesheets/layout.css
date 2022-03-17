@@ -11,3 +11,14 @@
 .nav-link {
     color: #fff !important;
 }
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #003f5c;
+}
