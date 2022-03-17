@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
+import Header from '../Components/Header';
+import Footer from '../Components/Footer';
 
-function Layout() {
+function Layout(props) {
     return (
     <div>
-        <h1>Layout</h1>
+        <Header />
+        <div className="content">
+            {props.children}
+        </div>
+        <Footer/>
     </div>
 )
 }
