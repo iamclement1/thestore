@@ -42,10 +42,10 @@ function Homepage() {
         }
     }
 
-    function addProductData () {
+    function addProductsData () {
         theshopProduct.map(async (product) => {
             try {
-                await addDoc(collection(fireDB, 'product'), product);
+                await addDoc(collection(fireDB, 'products'), product);
             } catch (error) {
                 console.log(error);
             }
@@ -57,6 +57,7 @@ function Homepage() {
         <h1>Home Page</h1>
         <button onClick={addData}>Add Data to firebase</button>
         <button onClick={getData}>Retrive data from firebase</button>
+        <button onClick={addProductsData}>Add product data to firebase</button>
     </Layout>
     
     )
