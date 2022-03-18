@@ -36,10 +36,22 @@ function Homepage() {
             <div className="row">
                 {products.map((product) => {
                     return <div className="col-md-4">
-                        <div className="m-2 p-1">
-                            <h3> {product.name} </h3>
-                            <img src={product.imageURL} alt="" 
-                            className='product-img'/>
+                        <div className="m-2 p-1 product">
+                            <div className="product-content">
+                                <p> {product.name} </p>
+                                    <div className='text-center'>
+                                        <img src={product.imageURL} alt="" 
+                                        className='product-img'/>
+                                    </div>
+                            </div>
+
+                            <div className="product-actions">
+                                <h2> ${product.price}  </h2>
+                                <div className="d-flex">
+                                    <button>Add to Cart</button>
+                                    <button>View</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 })}
