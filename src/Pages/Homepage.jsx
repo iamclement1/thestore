@@ -1,63 +1,50 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Layout from '../Components/Layout'
-import { collection, addDoc, getDoc } from "firebase/firestore"; 
+import { collection, getDocs } from "firebase/firestore"; 
 import fireDB from '../FirebaseConfig'
-import { theshopProduct } from '../theshopProduct';
+
 
 
 function Homepage() {
 
-    async function addData() {
-        try{
-            await addDoc(collection(fireDB, "users"), {
-                name: 'Jimoh Pelumi',
-                age: 20,
-            })
-        } catch(error) {
-            console.log(error)
-        }
+    const  [products, setProducts] = useState([]);
 
-    
-    }
+    useEffect( () => {
+        getData()
+    }, [])
 
     async function getData() {
-        try{
-            const user = await getDoc(collection (fireDB, 'users'), {
-                name: 'Jimoh Pelumi',
-                age: 20
-            })
-            const userArray = []
-
+        try {
+            const user = await getDocs(collection (fireDB, 'products'));
+            const productsArray = []
             user.forEach((doc) => {
                 const obj = {
                     id: doc.id, 
                     ...doc.data()
                 }
-                userArray.push(obj)
+                productsArray.push(obj);
             });
-
-            console.log(userArray)
+            setProducts(productsArray)
         } catch(error) {
             console.log(error)
         }
     }
 
-    function addProductsData () {
-        theshopProduct.map(async (product) => {
-            try {
-                await addDoc(collection(fireDB, 'products'), product);
-            } catch (error) {
-                console.log(error);
-            }
-        })
-    }
-    
     return (
     <Layout>
-        <h1>Home Page</h1>
-        <button onClick={addData}>Add Data to firebase</button>
-        <button onClick={getData}>Retrive data from firebase</button>
-        <button onClick={addProductsData}>Add product data to firebase</button>
+        <div className="container">
+            <div className="row">
+                {products.map((product) => {
+                    return <div className="col-md-4">
+                        <div className="m-2 p-1">
+                            <h3> {product.name} </h3>
+                            <img src={product.imageURL} alt="" 
+                            className='product-img'/>
+                        </div>
+                    </div>
+                })}
+            </div>
+        </div>
     </Layout>
     
     )
