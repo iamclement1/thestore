@@ -35,3 +35,11 @@
     right: 0;
     background-color: #003f5c;
 }
+
+button {
+    background: #003f5c;
+    box-shadow: none;
+    border: none;
+    color: #fff;
+    padding: 5px;
+}
