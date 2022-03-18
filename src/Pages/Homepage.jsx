@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../Components/Layout'
 import { collection, addDoc, getDoc } from "firebase/firestore"; 
 import fireDB from '../FirebaseConfig'
+import { theshopProduct } from '../theshopProduct';
 
 
 function Homepage() {
@@ -41,6 +42,15 @@ function Homepage() {
         }
     }
 
+    function addProductData () {
+        theshopProduct.map(async (product) => {
+            try {
+                await addDoc(collection(fireDB, 'product'), product);
+            } catch (error) {
+                console.log(error);
+            }
+        })
+    }
     
     return (
     <Layout>

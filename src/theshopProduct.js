@@ -1,4 +1,4 @@
-const theshopProduct = [
+export const theshopProduct = [
     {
         'price' : 600,
         'description' : 'Zebronic Zeb-200HM is a multimedia headphone with an adjustable mic',
