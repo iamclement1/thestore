@@ -43,3 +43,8 @@ button {
     color: #fff;
     padding: 5px;
 }
+
+button:hover{
+    background: #057c4b;
+    font-weight: bold !important;
+}
