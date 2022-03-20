@@ -1,9 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux'
 
 
 function Header() {
+
+  const { cartItems } = useSelector ( state => state.cartReducer)
+
+
   return (
     <div className='header'>
       <nav className='navbar navbar-expand-lg navbar-light bg-light'>
@@ -39,7 +44,7 @@ function Header() {
               </li>
               <li className="nav-item">
                 <Link to="/" className="nav-link">
-                  Cart
+                  Cart { cartItems.length }
                 </Link>
               </li>
             </ul>
