@@ -11,7 +11,7 @@ function ProductInfo() {
 
   useEffect( () => {
     getData()
-}, )
+}, );
 
   async function getData() {
     try {
@@ -26,10 +26,25 @@ function ProductInfo() {
 
   return (
     <Layout>
-      <h1>Product Info</h1>
-      { product && (
-        <h1> {product.name} </h1>
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-md-8">
+            { product && (
+            <div>
+              <p> {product.name} </p>
+              <img src={product.imageURL} alt="" 
+                className="productInfo-Image" />
+              <hr />
+              <p> {product.description} </p>
+            <div className="d-flex justify-content-end my-3">
+              <button>Add to Cart </button>
+          </div>
+        </div>
       )}
+          </div>
+        </div>
+      </div>
+      
     </Layout>
   )
 }

@@ -34,3 +34,7 @@
 .product:hover > .product-actions {
     opacity: 1;
 }
+
+.productInfo-Image {
+    height: 70vh;
+}
