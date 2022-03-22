@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { FaTrash } from 'react-icons/fa'
 import Layout from '../Components/Layout'
@@ -6,6 +6,16 @@ import Layout from '../Components/Layout'
 function CartPage() {
 
   const { cartItems } = useSelector ( state => state.cartReducer);
+
+  const [ totalAmount, setTotalAmount ] = useState(0)
+
+  useEffect(() => {
+    let temp = 0;
+    cartItems.forEach((cartItem) => {
+      temp = temp + cartItem.price
+    })
+    setTotalAmount(temp)
+  }, [cartItems])
 
   // local storage is updated once the action delete or add is done  in the cart page
   useEffect( () => {
@@ -55,6 +65,12 @@ function CartPage() {
           })}
         </tbody>
       </table>
+
+      <div className="d-flex justify-content-end">
+        <h1 className="total-amount">
+          Total Amount = $ {totalAmount} 
+        </h1>
+      </div>
     </Layout>
   )
 }
