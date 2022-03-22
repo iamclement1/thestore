@@ -43,7 +43,7 @@ function Header() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/" className="nav-link">
+                <Link to="/cart" className="nav-link">
                   Cart { cartItems.length }
                 </Link>
               </li>
