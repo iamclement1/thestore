@@ -2,6 +2,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux'
+import { FaShoppingCart } from 'react-icons/fa'
 
 
 function Header() {
@@ -44,7 +45,7 @@ function Header() {
               </li>
               <li className="nav-item">
                 <Link to="/cart" className="nav-link">
-                  Cart { cartItems.length }
+                  <FaShoppingCart /> { cartItems.length }
                 </Link>
               </li>
             </ul>
