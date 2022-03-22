@@ -7,6 +7,7 @@ function CartPage() {
 
   const { cartItems } = useSelector ( state => state.cartReducer);
 
+  // total amount function
   const [ totalAmount, setTotalAmount ] = useState(0)
 
   useEffect(() => {
@@ -70,6 +71,10 @@ function CartPage() {
         <h1 className="total-amount">
           Total Amount = $ {totalAmount} 
         </h1>
+      </div>
+      
+      <div className="d-flex justify-content-end mt-2">
+        <button className="order-button">Place Order</button>
       </div>
     </Layout>
   )

@@ -38,3 +38,20 @@
 .productInfo-Image {
     height: 70vh;
 }
+
+.total-amount {
+    background: rgb(10, 67, 95);
+    padding: 0.4em;
+    color: #fff;
+    font-weight: bold;
+}
+
+.total-amount:hover {
+    background: rgb(156, 201, 221);
+    color: #000;
+}
+
+.order-button{
+    cursor: pointer;
+    
+}
