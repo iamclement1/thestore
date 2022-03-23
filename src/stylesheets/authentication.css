@@ -1,0 +1,41 @@
+.register-parent{
+    height: 100vh;
+    background: aliceblue;
+}
+
+.register-parent .row{
+    height: 100vh;
+    align-items: center;
+}
+
+.register-top {
+    height: 50%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: #003f5c;
+}
+
+.register-form {
+    padding: 20px;
+    position: relative;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+
+.form-control{
+    box-shadow: none;
+}
+
+.form-control:focus{
+    margin-top: 15px !important;
+    box-shadow: none !important;
+
+}
+
+input {
+    margin-top: 15px !important;
+}

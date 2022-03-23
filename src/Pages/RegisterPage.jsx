@@ -8,12 +8,13 @@ function RegisterPage() {
 
   return (
     <div className='register-parent'>
-        <div className="row">
+      <div className="register-top"></div>
+        <div className="row justify-content-center">
           <div className="col-md-5">
           <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_hsojyr3p.json"  background="transparent"  speed="1"  loop autoplay></lottie-player>
           </div>
           <div className="col-md-4">
-            <div className='login-form'>
+            <div className='register-form'>
               <h2>Register</h2>
               <hr />
               <input type="text" className="form-control" placeholder="email"
@@ -22,7 +23,7 @@ function RegisterPage() {
               onChange={(e) => {setPassword(e.target.value)}} />
               <input type="password" className="form-control" placeholder="confirm password" value={cpassword}
               onChange={(e) => setCPassword(e.target.value)} />
-              <button>Register</button>
+              <button className='my-3'>Register</button>
             </div>
           </div>
         </div>
