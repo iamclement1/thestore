@@ -8,6 +8,12 @@ import { FaShoppingCart } from 'react-icons/fa'
 function Header() {
 
   const { cartItems } = useSelector ( state => state.cartReducer)
+  const { user } = JSON.parse(localStorage.getItem('currentUser'))
+
+  const logout = () => {
+    localStorage.removeItem('currentUser')
+    window.location.reload()
+  }
 
 
   return (
@@ -30,7 +36,7 @@ function Header() {
             <ul className='navbar-nav ms-auto'>
               <li className='nav-item'>
                 <Link to="/" className='nav-link active' aria-current='page'>
-                  User
+                  {user.email.substring(0, user.email.length-10)}
                 </Link>
               </li>
               <li className='nav-item'>
@@ -39,7 +45,8 @@ function Header() {
                 </Link>
               </li>
               <li className='nav-item'>
-                <Link to="/" className="nav-link">
+                <Link to="/" className="nav-link"
+                onClick={logout}>
                   Logout
                 </Link>
               </li>
