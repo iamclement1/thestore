@@ -8,10 +8,13 @@ import './stylesheets/layout.css'
 import './stylesheets/product.css'
 import './stylesheets/authentication.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
     return (
         <div className='App'>
+            <ToastContainer />
             <BrowserRouter>
             <Routes>
                 <Route path='/' exact element={<Homepage/>} />
