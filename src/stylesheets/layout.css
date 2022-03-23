@@ -48,3 +48,15 @@ button:hover{
     background: #057c4b;
     font-weight: bold !important;
 }
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.spinner-border {
+    height: 4em;
+    width: 4em
+}

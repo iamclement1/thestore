@@ -11,15 +11,18 @@ function Homepage() {
 
     const  [products, setProducts] = useState([]);
     const {cartItems} = useSelector (state => state.cartReducer)
-    const dispatch = useDispatch()
-    const navigate = useNavigate()
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const [ loading, setLoading ] = useState(false)
 
     useEffect( () => {
         getData()
     }, [])
 
     async function getData() {
+        
         try {
+            setLoading(true)
             const user = await getDocs(collection (fireDB, 'products'));
             const productsArray = []
             user.forEach((doc) => {
@@ -28,10 +31,12 @@ function Homepage() {
                     ...doc.data()
                 }
                 productsArray.push(obj);
+                setLoading(false);
             });
             setProducts(productsArray)
         } catch(error) {
-            console.log(error)
+            console.log(error);
+            setLoading(false);
         }
     }
 
@@ -46,7 +51,7 @@ function Homepage() {
     }
 
     return (
-    <Layout>
+    <Layout loading={loading}>
         <div className="container">
             <div className="row">
                 {products.map((product) => {
