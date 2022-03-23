@@ -1,4 +1,5 @@
 import React, { useState }from 'react'
+import { Link } from 'react-router-dom'
 
 function RegisterPage() {
 
@@ -24,6 +25,7 @@ function RegisterPage() {
               <input type="password" className="form-control" placeholder="confirm password" value={cpassword}
               onChange={(e) => setCPassword(e.target.value)} />
               <button className='my-3'>Register</button>
+              <Link to='/login' className='p-4 text-decoration-none'> Click here to Login</Link>
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import React, { useState} from 'react'
+import { Link } from 'react-router-dom'
 
 function LoginPage() {
 
@@ -24,6 +25,7 @@ function LoginPage() {
             value={password} onChange= {(e) => {setPassword (e.target.value);}}/>
 
             <button className='my-3 '> Login </button>
+            <Link to='/register' className='p-4 text-decoration-none'>Click here to register</Link>
           </div>
         </div>
         <div className="col-md-5">
