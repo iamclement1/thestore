@@ -30,16 +30,17 @@ function ProductInfo() {
 }
 
   return (
-    <Layout loading = { loading }>
+    <Layout>
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-md-8">
             { product && (
             <div>
-              <p> {product.name} </p>
+              
               <img src={product.imageURL} alt="" 
                 className="productInfo-Image" />
               <hr />
+              <p> {product.name} </p>
               <p> {product.description} </p>
             <div className="d-flex justify-content-end my-3">
               <button>Add to Cart </button>
