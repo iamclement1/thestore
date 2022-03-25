@@ -33,7 +33,7 @@ function RegisterPage() {
       <div className="register-top"></div>
         <div className="row justify-content-center">
           {/* animation column */}
-          <div className="col-md-5">
+          <div className="col-md-5 d-none d-sm-block">
           <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_hsojyr3p.json"  background="transparent"  speed="1"  loop autoplay></lottie-player>
           </div>
           <div className="col-md-4">

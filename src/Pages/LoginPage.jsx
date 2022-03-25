@@ -32,7 +32,7 @@ function LoginPage() {
       {loading && ( <Loader />)}
       <div className="login-top"></div>
       <div className="row justify-content-center">
-        <div className="col-md-4">
+        <div className="col-md-4 ">
           <div className="login-form">
             <h2>Login</h2>
             <hr />
@@ -50,7 +50,7 @@ function LoginPage() {
             <Link to='/register' className='p-4 text-decoration-none'>Click here to register</Link>
           </div>
         </div>
-        <div className="col-md-5">
+        <div className="col-md-5 d-none d-sm-block">
           <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_hsojyr3p.json"  background="transparent"  speed="1"  loop autoplay></lottie-player>
         </div>
       </div>
