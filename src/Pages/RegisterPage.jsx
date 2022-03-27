@@ -20,6 +20,7 @@ function RegisterPage() {
       console.log(result)
       setLoading(false);
       toast.success(`User registered successfully`);
+      window.location.href="/"
     } catch (error) {
       console.log(error)
       toast.error(`User registration failed`);
