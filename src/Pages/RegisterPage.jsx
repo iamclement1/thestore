@@ -1,19 +1,34 @@
 import React, { useState, useEffect }from 'react'
 import { Link } from 'react-router-dom'
-
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import Loader from '../Components/Loader'
 import { toast } from 'react-toastify';
+import Joi from 'joi'
 
 
 
 function RegisterPage() {
 
   const [email, setEmail] = useState('');
+  const [ error, setError ] = useState('');
   const [ password, setPassword ] = useState('');
   const [ cpassword, setCPassword ] = useState('');
   const [loading, setLoading ] = useState(false);
   const auth = getAuth();
+
+
+  useEffect( () => {
+    const validation = Joi.string()
+    .email({tlds: {allow: false}})
+    .label('Email')
+    .validate({email});
+
+    setError(validation?.error?.message || "");
+    
+  }, [email, error])
+
+  
+
 
   const register = async () => {
     try {
@@ -29,6 +44,9 @@ function RegisterPage() {
       setLoading(false);
     }
   }
+
+
+
 
   return (
     <div className='register-parent'>

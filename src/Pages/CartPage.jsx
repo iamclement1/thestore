@@ -21,11 +21,15 @@ function CartPage() {
   // local storage is updated once the action delete or add is done  in the cart page
   useEffect( () => {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
-  }, [cartItems])
+  }, [cartItems]);
+
+  
 
   const dispatch = useDispatch ();
   const deleteFromCart = (product) =>{
     dispatch({ type: 'DELETE_FROM_CART', payload: product });
+
+    state.cartItems = nextCartItems;
   }
 
   return (
@@ -41,6 +45,9 @@ function CartPage() {
             </th>
             <th>
               Price
+            </th>
+            <th>
+              Quantity
             </th>
             <th>
               Action
@@ -60,6 +67,9 @@ function CartPage() {
                 {item.price}
               </td>
               <td>
+                {item.quantity}
+              </td>
+              <td>
                 <FaTrash onClick={ () => deleteFromCart(item)} />
               </td>
             </tr>
@@ -68,9 +78,9 @@ function CartPage() {
       </table>
 
       <div className="d-flex justify-content-end">
-        <h1 className="total-amount">
+        <h3 className="total-amount">
           Total Amount = $ {totalAmount} 
-        </h1>
+        </h3>
       </div>
       
       <div className="d-flex justify-content-end mt-2">
