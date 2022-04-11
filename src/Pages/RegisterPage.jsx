@@ -37,7 +37,7 @@ function RegisterPage() {
       console.log(result)
       setLoading(false);
       toast.success(`User registered successfully`);
-      window.location.href="/"
+      window.location.href="/login"
     } catch (error) {
       console.log(error)
       toast.error(`User registration failed`);

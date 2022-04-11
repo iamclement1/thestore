@@ -4,6 +4,8 @@ import { collection, getDocs } from "firebase/firestore";
 import fireDB from '../FirebaseConfig'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
+
 
 
 
@@ -47,8 +49,11 @@ function Homepage() {
     const addToCart = ( product ) => {
         dispatch({
             type : 'ADD_TO_CART', payload: product
-        })
+        });
+
+        toast.success('product added to card')
     }
+
 
     return (
     <Layout loading={loading}>

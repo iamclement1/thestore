@@ -41,7 +41,7 @@ function Header() {
               </li>
               <li className='nav-item'>
                 <Link to="/" className="nav-link">
-                  Orders
+                  Products
                 </Link>
               </li>
               <li className='nav-item'>

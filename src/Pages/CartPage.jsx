@@ -2,6 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { FaTrash } from 'react-icons/fa'
 import Layout from '../Components/Layout'
+import { toast } from 'react-toastify'
+
+
+
+
 
 function CartPage() {
 
@@ -28,8 +33,7 @@ function CartPage() {
   const dispatch = useDispatch ();
   const deleteFromCart = (product) =>{
     dispatch({ type: 'DELETE_FROM_CART', payload: product });
-
-    state.cartItems = nextCartItems;
+    toast.error('product succesfully removed')
   }
 
   return (
