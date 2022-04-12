@@ -23,9 +23,10 @@ function RegisterPage() {
     .label('Email')
     .validate({email});
 
-    setError(validation?.error?.message || "");
+    setError(validation?.error?.message || "use a valid email");
     
   }, [email, error])
+
 
   
 

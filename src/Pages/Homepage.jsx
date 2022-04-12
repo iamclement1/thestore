@@ -51,7 +51,7 @@ function Homepage() {
             type : 'ADD_TO_CART', payload: product
         });
 
-        toast.success('product added to card')
+        toast.success('product added to cart')
     }
 
 

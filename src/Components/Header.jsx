@@ -3,6 +3,8 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux'
 import { FaShoppingCart } from 'react-icons/fa'
+import { toast } from 'react-toastify';
+
 
 
 function Header() {
@@ -13,6 +15,7 @@ function Header() {
   const logout = () => {
     localStorage.removeItem('currentUser')
     window.location.reload()
+    toast.error('user successfully logged out')
   }
 
 
@@ -49,6 +52,7 @@ function Header() {
                 onClick={logout}>
                   Logout
                 </Link>
+                
               </li>
               <li className="nav-item">
                 <Link to="/cart" className="nav-link">
