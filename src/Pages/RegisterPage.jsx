@@ -26,7 +26,22 @@ function RegisterPage() {
 
     setError(validation?.error?.message || "use a valid email");
     
-  }, [email, error]);  
+  }, [email, error]);
+
+  useEffect( () => {
+    const validation = Joi.string()
+    .password({tlds: {allow: false}})
+    .label('password')
+    .validate({password});
+
+    setError(validation?.error?.message || "");
+    
+  }, [password, error]);
+
+ 
+
+
+  
 
 
   const register = async () => {
@@ -54,7 +69,8 @@ function RegisterPage() {
         <div className="row justify-content-center">
           {/* animation column */}
           <div className="col-md-5 d-none d-sm-block">
-            <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_hsojyr3p.json"  background="transparent"  speed="1"  loop autoplay></lottie-player>
+            <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_hsojyr3p.json"  
+            background="transparent"  speed="1"  loop autoplay></lottie-player>
           </div>
           <div className="col-md-4">
             <div className='register-form'>
