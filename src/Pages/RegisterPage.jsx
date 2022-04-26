@@ -21,14 +21,12 @@ function RegisterPage() {
     const validation = Joi.string()
     .email({tlds: {allow: false}})
     .label('Email')
+    .required()
     .validate({email});
 
     setError(validation?.error?.message || "use a valid email");
     
-  }, [email, error])
-
-
-  
+  }, [email, error]);  
 
 
   const register = async () => {
