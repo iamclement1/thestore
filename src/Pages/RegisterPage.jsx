@@ -27,20 +27,6 @@ function RegisterPage() {
     setError(validation?.error?.message || "use a valid email");
     
   }, [email, error]);
-
-  useEffect( () => {
-    const validation = Joi.string()
-    .password({tlds: {allow: false}})
-    .label('password')
-    .validate({password});
-
-    setError(validation?.error?.message || "");
-    
-  }, [password, error]);
-
- 
-
-
   
 
 
