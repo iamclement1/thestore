@@ -6,7 +6,6 @@ import { toast } from 'react-toastify';
 import Joi from 'joi'
 
 
-
 function RegisterPage() {
 
   const [email, setEmail] = useState('');
@@ -44,6 +43,7 @@ function RegisterPage() {
       toast.error(`User registration failed`);
       setLoading(false);
     }
+  
   }
 
 
