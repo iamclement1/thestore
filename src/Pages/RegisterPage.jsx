@@ -15,7 +15,6 @@ function RegisterPage() {
   const [loading, setLoading ] = useState(false);
   const auth = getAuth();
 
- 
 
   useEffect( () => {
     const validation = Joi.string()
