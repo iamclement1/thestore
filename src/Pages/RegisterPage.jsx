@@ -1,10 +1,9 @@
-import React, { useState, useEffect }from 'react'
+import React, { useState }from 'react'
 import { Link } from 'react-router-dom'
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import Loader from '../Components/Loader'
 import { toast } from 'react-toastify';
-import { Formik, Form } from 'formik'
-import * as Yup from 'yup'
+
 
 function RegisterPage() {
 
@@ -14,12 +13,6 @@ function RegisterPage() {
   const [loading, setLoading ] = useState(false);
   const auth = getAuth();
 
-  const validate = Yup.object({
-    email: Yup.string()
-  })
-
-
- 
 
   const register = async () => {
     try {
@@ -36,9 +29,6 @@ function RegisterPage() {
     }
   
   }
-
-
-
 
   return (
     <div className='register-parent'>
